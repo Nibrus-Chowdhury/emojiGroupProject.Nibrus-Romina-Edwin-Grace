@@ -49,42 +49,51 @@ def draw(canvas):
     leftWidth = width*0.25
     topHeight = height*0.25
     rightWidth = width*0.75
+    bottomHeight = height*0.75
+    bottomHeightObj = bottomHeight*0.333333
     if face1:
-        canvas.draw_circle((leftWidth, topHeight), topHeight, 1, "Yellow", "Yellow")
+        canvas.draw_circle((leftWidth, topHeight), topHeight*0.9, 1, "Yellow", "Yellow")
         canvas.draw_circle((leftWidth*0.2,topHeight*0.2), topHeight*0.2, 1, "yellow", "yellow")
         canvas.draw_circle((leftWidth*1.8,topHeight*0.2), topHeight*0.2, 1, "yellow", "yellow")
         canvas.draw_circle((leftWidth*0.6,topHeight*0.6),topHeight*0.2,2,"black","black")
         canvas.draw_circle((leftWidth*1.4,topHeight*0.6),topHeight*0.2,2,"black","black")
         canvas.draw_polygon([(leftWidth*0.6,topHeight*1.1),(leftWidth,topHeight*1.6),(leftWidth*1.4,topHeight*1.1)], 2,"black","white")
+        canvas.draw_line((width/2,0),(width/2,height),2,"white")
+        canvas.draw_line((0,height/2),(width,height/2),2,"white")
     if face2:
-        canvas.draw_circle((rightWidth, topHeight), topHeight, 1, "Yellow", "Yellow")
+        canvas.draw_circle((rightWidth, topHeight), topHeight*0.9, 1, "Yellow", "Yellow")
         canvas.draw_circle((rightWidth*0.85, topHeight*0.85), topHeight*0.12, 2, "Black","Black")
         canvas.draw_circle((rightWidth*0.85, topHeight*0.81), topHeight*0.12, 2, "Yellow","Yellow")
         canvas.draw_circle((rightWidth*1.1,topHeight*0.85),topHeight*0.12,2,"black","black")
         canvas.draw_circle((rightWidth*1.1,topHeight*0.81), topHeight*0.12, 2, "Yellow","Yellow")
         canvas.draw_circle((rightWidth*0.92, topHeight*1.25), topHeight*0.12, 2, "Black","Black")
         #zzz
-        canvas.draw_line((width/2.4,height/3),(width/2, height/3), 3, "Blue")
-        canvas.draw_line((width/2.4, height/3),(width/2, height/3.3), 3, "Blue")
-        canvas.draw_line((width/2, height/3.3),(width/2.4, height/3.3), 3, "Blue")
-       
+        canvas.draw_line((rightWidth,topHeight),(rightWidth*1.1, topHeight), 3, "Blue")
+        canvas.draw_line((rightWidth*1.1, topHeight),(rightWidth, topHeight*1.1), 3, "Blue")
+        canvas.draw_line((rightWidth, topHeight*1.1),(rightWidth*1.1, topHeight*1.1), 3, "Blue")
+        canvas.draw_line((width/2,0),(width/2,height),2,"white")
+        canvas.draw_line((0,height/2),(width,height/2),2,"white")
         canvas.draw_line((width/1.7, height/4),(width/1.5, height/4), 3, "Blue")
         canvas.draw_line((width/1.7, height/4),(width/1.5, height/5), 3, "Blue")
         canvas.draw_line((width/1.5, height/5),(width/1.7, height/5), 3, "Blue")
     if face3:
-        canvas.draw_circle((width/2, height/2), width/2 - 50, 10, "orange", "orange")
-        canvas.draw_circle((width/2 - 100, height/2 - 100), 25, 2, "Black", "Black")
-        canvas.draw_circle((width/2 + 100, height/2 - 100), 25, 2, "Black", "Black")
-        canvas.draw_line((width/3, height/2 + 170), (width - width/3, height/2 + 100), 10, "Black")  
-        canvas.draw_line((width - width/3, height/2 + 170), (width/3, height/2 + 100), 10, "Black")
+        canvas.draw_circle((leftWidth, bottomHeight), bottomHeightObj*0.9, 1, "orange", "orange")
+        canvas.draw_circle((leftWidth*0.6, bottomHeight*0.9), bottomHeightObj*0.12, 2, "Black", "black")
+        canvas.draw_circle((leftWidth*1.4, bottomHeight*0.9), bottomHeightObj*0.12, 2, "Black", "black")
+        canvas.draw_line((leftWidth*0.6, bottomHeight*1.15), (leftWidth*1.4, bottomHeight*1.25), 5, "Black")  
+        canvas.draw_line((leftWidth*0.6, bottomHeight*1.25), (leftWidth*1.4, bottomHeight*1.15), 5, "Black")
+        canvas.draw_line((width/2,0),(width/2,height),2,"white")
+        canvas.draw_line((0,height/2),(width,height/2),2,"white")
     if face4:
-        canvas.draw_circle((width/2, height/2), width/2 - 50, 10, "white", "Yellow")
-        canvas.draw_circle([width/2.75, height/2 - 100], 10 , 10, "Black", "White")
-        canvas.draw_circle([width-150, height/2 - 100], 10 , 10, "Black", "White")
+        canvas.draw_circle((rightWidth, bottomHeight), bottomHeightObj*0.9, 5, "white", "Yellow")
+        canvas.draw_circle([rightWidth*0.8, bottomHeight*0.8], bottomHeightObj*0.1, 10, "Black", "White")
+        canvas.draw_circle([width-150, height/2 - 100], bottomHeightObj*0.1, 10, "Black", "White")
         canvas.draw_line((width/2, height/2 - 150),(width/4, height/2 - 125), 5, "Black")
         canvas.draw_line((width - width/30, height/2 - 150),(width - width/3 - 50, height/2 - 125), 5, "Black")
         canvas.draw_polygon([(width/2, height - height/5), (width - 70, height - height/4 + 25), (width/2 - 10, height - height/4 - 60), (width/2 + 10, height - height/4 - 30), (width/2, height - height/4 + 25)],10, "orange", "orange")
         canvas.draw_circle((164, 284), 35, 5, "pink", 'pink')
+        canvas.draw_line((width/2,0),(width/2,height),2,"white")
+        canvas.draw_line((0,height/2),(width,height/2),2,"white")
         
 frame = simplegui.create_frame("Pictures", width, height) 
 
